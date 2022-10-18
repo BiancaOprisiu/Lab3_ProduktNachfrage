@@ -5,11 +5,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Product> products=new ArrayList<Product>();
-        products.add(new Product("name1", 4, 2, 5, 2));
-        products.add(new Product("name2", 32, 23, 87, 36));
-        products.add(new Product("name2", 72, 29, 92, 83));
+        products.add(new Product("scaune", 95, 95, 95, 95));
+        products.add(new Product("mese", 32, 23, 87, 36));
+        products.add(new Product("paturi", 72, 29, 92, 83));
 
         products.sort(Comparator.comparing(Product::getAvgDemand));
+        System.out.println(products);
         fitToCategory(products);
     }
 
@@ -31,15 +32,15 @@ public class Main {
 
         System.out.println("rising:");
         for (Product riseProd : rising){
-            System.out.println(riseProd.getDemand1()*2);
+            System.out.println(riseProd.getName() + " " + Math.floor(riseProd.getProduced1()*1.5));
         }
         System.out.println("stagnated:");
         for (Product stagnateProd : stagnated){
-            System.out.println(stagnateProd.getDemand1()*0.1);
+            System.out.println(stagnateProd.getName() + " " + Math.floor(stagnateProd.getProduced1()*1.1));
         }
         System.out.println("falling:");
         for (Product fallProd : falling){
-            System.out.println(fallProd.getDemand1()/0.1);
+            System.out.println(fallProd.getName() + " " + Math.floor(fallProd.getProduced1()*0.9));
         }
     }
 }

@@ -83,4 +83,17 @@ public class Product {
         this.sold2 = sold2;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", produced1=" + produced1 +
+                ", sold1=" + sold1 +
+                ", produced2=" + produced2 +
+                ", sold2=" + sold2 +
+                ", demand1=" + demand1 +
+                ", demand2=" + demand2 +
+                ", avgDemand=" + avgDemand +
+                '}';
+    }
 }
